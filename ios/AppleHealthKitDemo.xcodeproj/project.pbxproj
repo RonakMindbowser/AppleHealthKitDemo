@@ -14,6 +14,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-AppleHealthKitDemo-AppleHealthKitDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppleHealthKitDemo-AppleHealthKitDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BA02A068283D00B2005B5563 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA02A067283D00B2005B5563 /* HealthKit.framework */; };
+		BA3C2FEB283F8570000B854C /* RCTHealthKit.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3C2FEA283F8570000B854C /* RCTHealthKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-AppleHealthKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppleHealthKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AppleHealthKitDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AppleHealthKitDemo-AppleHealthKitDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppleHealthKitDemo-AppleHealthKitDemoTests.release.xcconfig"; path = "Target Support Files/Pods-AppleHealthKitDemo-AppleHealthKitDemoTests/Pods-AppleHealthKitDemo-AppleHealthKitDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		BA02A066283D00B2005B5563 /* AppleHealthKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AppleHealthKitDemo.entitlements; path = AppleHealthKitDemo/AppleHealthKitDemo.entitlements; sourceTree = "<group>"; };
+		BA02A067283D00B2005B5563 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BA3C2FE9283F6888000B854C /* RCTHealthKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTHealthKit.h; sourceTree = "<group>"; };
+		BA3C2FEA283F8570000B854C /* RCTHealthKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTHealthKit.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C80B921A6F3F58F76C31292 /* libPods-AppleHealthKitDemo.a in Frameworks */,
+				BA02A068283D00B2005B5563 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +93,15 @@
 		13B07FAE1A68108700A75B9A /* AppleHealthKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BA02A066283D00B2005B5563 /* AppleHealthKitDemo.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				BA3C2FE9283F6888000B854C /* RCTHealthKit.h */,
+				BA3C2FEA283F8570000B854C /* RCTHealthKit.m */,
 			);
 			name = AppleHealthKitDemo;
 			sourceTree = "<group>";
@@ -99,6 +109,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA02A067283D00B2005B5563 /* HealthKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-AppleHealthKitDemo.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-AppleHealthKitDemo-AppleHealthKitDemoTests.a */,
@@ -207,7 +218,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -412,6 +423,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				BA3C2FEB283F8570000B854C /* RCTHealthKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,9 +495,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AppleHealthKitDemo/AppleHealthKitDemo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = AppleHealthKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,6 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AppleHealthKitDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleHealthKitDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -509,8 +524,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AppleHealthKitDemo/AppleHealthKitDemo.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = AppleHealthKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,6 +539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AppleHealthKitDemo;
+				SWIFT_OBJC_BRIDGING_HEADER = "AppleHealthKitDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
