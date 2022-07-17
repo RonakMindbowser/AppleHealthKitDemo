@@ -19,17 +19,8 @@
 
 @interface RCTHealthKit : NSObject <RCTBridgeModule>
 
-
 @property (nonatomic) HKHealthStore *healthStore;
-//@property (nonatomic, assign) BOOL hasListeners;
-
-//- (HKHealthStore *)_initializeHealthStore;
-//- (void)isHealthKitAvailable:(RCTResponseSenderBlock)callback;
-//
-//- (void)intitalizeHealthKit:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback;
-
 
 @end
-
 
 #endif /* RCTHealthKit_h */

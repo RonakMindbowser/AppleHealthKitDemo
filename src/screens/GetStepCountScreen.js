@@ -155,6 +155,7 @@ const GetStepCountScreen = () => {
                                     if (selectedIndex == 0) setstartDate(dt)
                                     else setendDate(dt)
                                 }}
+                                minimumDate={selectedIndex == 1 && startDate}
                                 maximumDate={new Date()}
                                 is24hourSource="locale"
                                 mode='date'

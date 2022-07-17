@@ -1,11 +1,11 @@
 import { NativeModules } from "react-native";
 import { showSimpleAlert } from "./Utils";
 
-const { HealthKit: RNHealthKit } = NativeModules;
+const { HealthKit } = NativeModules;
 
 const isHealthKitAvailable = () => {
     return new Promise((resolve, reject) => {
-        RNHealthKit.isAvailable((err, available) => {
+        HealthKit.isAvailable((err, available) => {
             if (available) {
                 resolve(available)
             }
@@ -19,7 +19,7 @@ const isHealthKitAvailable = () => {
 
 const initAppleHealthKit = () => {
     return new Promise((resolve, reject) => {
-        RNHealthKit.initAppleHealthKit(({}), (err, results) => {
+        HealthKit.initAppleHealthKit(({}), (err, results) => {
             if (results) {
                 resolve(results)
             }
@@ -33,7 +33,7 @@ const initAppleHealthKit = () => {
 
 const getDailyStepCountSamples = (params) => {
     return new Promise((resolve, reject) => {
-        RNHealthKit.getDailyStepCountSamples((params), (err, results) => {
+        HealthKit.getDailyStepCountSamples((params), (err, results) => {
             console.log("available getDailyStepCountSamples--->", results);
             console.log("err ---getDailyStepCountSamples>", err);
             if (results) {
@@ -47,7 +47,7 @@ const getDailyStepCountSamples = (params) => {
 }
 
 export {
-    RNHealthKit,
+    HealthKit,
     isHealthKitAvailable,
     initAppleHealthKit,
     getDailyStepCountSamples,
